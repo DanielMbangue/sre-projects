@@ -1,0 +1,10 @@
+INFO server started
+ERROR database connection failed
+INFO user logged in
+ERROR timeout on request
+WARNING memory usage high
+ERROR database connection failed
+INFO user logged out
+WARNING disk space low
+ERROR timeout on request
+ERROR database connection failed
