@@ -24,8 +24,6 @@ def log_warning(message):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"{timestamp} -- WARNING: {message}\n")
       
-   
-
 
 def main():
    try:
