@@ -11,5 +11,3 @@ def run_traceroute(hostname, max_hops=15):
         return result.stdout
     except subprocess.TimeoutExpired:
         return None
-
-print(run_traceroute("google.com"))

@@ -7,7 +7,3 @@ def check_http(url, timeout=5):
         return(success,response.status_code,elapsed_ms)
     except requests.exceptions.RequestException:
         return(False, None,None)
-    
-print(check_http("https://google.com"))
-print(check_http("https://httpbin.org/status/500"))
-print(check_http("https://notarealdomain123xyz.com"))

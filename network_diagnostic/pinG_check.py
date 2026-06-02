@@ -17,6 +17,3 @@ def check_ping(hostname):
             avg_latency = float(values[1])
             return (True, avg_latency)
     return(True, None)
-
-print(check_ping("google.com"))
-print(check_ping("notarealdomain123xyz.com"))
