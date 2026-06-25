@@ -32,5 +32,6 @@ def main():
         print(f"\nTotal Unique Errors: {len(unique_errors)}")  
     except FileNotFoundError:
         print("Error: log file not found")
-main()
+    if __name__ == "__main__":
+        main()
 
