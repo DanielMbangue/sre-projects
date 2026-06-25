@@ -7,8 +7,11 @@ def count_error_types(lines):
     error_counts = {}
     unique_errors = set()
     for line in lines:
+        parts = line.split()
+        if not parts:
+            continue
         unique_errors.add(line)
-        level = line.split()[0]
+        level = parts[0]
         if level in error_counts:
             error_counts[level] += 1
         else:
