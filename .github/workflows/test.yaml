@@ -20,8 +20,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install pytest
-        run: pip install pytest
+      - name: Install dependencies
+        run: pip install pytest psutil
 
       - name: Run tests
         run: python -m pytest -v
