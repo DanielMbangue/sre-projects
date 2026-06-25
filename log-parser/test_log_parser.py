@@ -45,3 +45,21 @@ def test_read_missing_file_raises():
     # reading a file that doesn't exist should raise FileNotFoundError
     with pytest.raises(FileNotFoundError):
         read_log_file("this_file_does_not_exist.log")
+        
+def test_blank_line_does_not_crash():
+    # a blank line in the middle should be skipped, not crash
+    lines = ["ERROR disk full\n", "\n", "INFO recovered\n"]
+    counts, unique = count_error_types(lines)
+    assert counts == {"ERROR": 1, "INFO": 1}
+
+def test_whitespace_only_line():
+    # a line of just spaces should also be skipped
+    lines = ["   \n", "WARNING low disk\n"]
+    counts, unique = count_error_types(lines)
+    assert counts == {"WARNING": 1}
+
+def test_single_line():
+    # boundary: exactly one line
+    counts, unique = count_error_types(["INFO ok\n"])
+    assert counts == {"INFO": 1}
+    assert len(unique) == 1
